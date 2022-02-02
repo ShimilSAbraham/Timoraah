@@ -39,8 +39,10 @@ let addBtn = document.getElementById("add_review");
 let sno = 6;
 console.log(cust_name.value);
 
-function AddReview() {
-    alert("Clicked");
+function AddReview(e) {
+  e.preventDefault();
+  console.log(e);
+  alert("Clicked");
   console.log(cust_name.value);
   set(ref(db, "Review/" + sno), {
     Name: cust_name.value,
@@ -49,11 +51,14 @@ function AddReview() {
     Time: cust_time.value,
   })
     .then(() => {
-      alert("Data stored successfully");
+      console.log("Data stored successfully");
     })
     .catch((error) => {
-      alert("Unexpected = " + error);
+      console.error("Unexpected = " + error);
     });
 }
 
 addBtn.addEventListener("click", AddReview);
+
+// @TODO
+// 1. Pricing
