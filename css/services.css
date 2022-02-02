@@ -1,0 +1,137 @@
+.Services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 50px 0;
+    border-radius: 20px;
+    width: 80%;
+    margin: 50px auto 0;
+  }
+  .Services .mini-title{
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  .Services h1.title{
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+  .Services .card-box{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .Services .card-box .card{
+    width: 80%;
+    height: 130px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .Services .card-box .card .icon{
+    min-height: 80px;
+    float: left;
+}
+.Services .card-box .card .icon img{
+      font-size: 5.0rem;
+      float: left;
+      max-width: 100%;
+  }
+  .Services .card-box .card div{
+      display: flex;
+      flex-direction: column;
+  }
+  .Services .card-box .card div h1.title{
+    font-size: 1.1rem;
+    text-align: center;
+    border-bottom: 5px solid grey;
+    padding-bottom: 5px;
+    border-radius: 10px;
+  }
+
+  .Services .card-box .card div p{
+    text-align: center;
+    width: 90%;
+    font-weight: 300;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 20px;
+  }
+
+
+.Services .btn-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.Services .btn-box .btn{
+    padding: 10px;
+    width: 300px;
+    border-radius: 30px;
+    text-align: center;
+  
+    background: #7e57c2;
+    color: #111;
+    font-weight: 500;
+  
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.Services .btn-box .btn:hover{
+    background: #673ab7;
+    color: #fff;
+}
+
+.Services .btn-box .btn:first-child{
+    color: #673ab7;
+    background: #b39ddb;
+    border: 2px solid #673ab7;
+}
+
+.Services .btn-box .btn:first-child:hover{
+    background: #111;
+    color: #fff;
+    border: 2px solid #111;
+}
+
+.Services .content{
+    text-align: center;
+    width: 500px;
+    padding: 50px;
+    font-size: 1.5rem;
+}
+
+  @media(max-width: 500px){
+    .Services{
+        width: 90%;
+        margin: -60px auto 0;
+        gap: 10px;
+      }
+      .Services .mini-title{
+        font-size: 0.8rem;
+      }
+      .Services h1.title{
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+      }
+    .Services .card-box{
+        flex-direction: column;
+        gap: 0px;
+      }
+      .Services .card-box .card{
+        width: 90%;
+        height: 300px;
+        gap: 20px;
+      }
+      .Services .card-box .card p{
+        font-weight: 300;
+        font-size: 0.8rem;
+      }
+}
