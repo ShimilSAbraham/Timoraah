@@ -26,7 +26,10 @@ import {
   remove,
 } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-database.js";
 
-const db = getDatabase();
+import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
+
+// const db = getDatabase();
+const db = getFirestore();
 
 // References
 
@@ -38,6 +41,13 @@ let cust_star = document.getElementById("cust_star");
 let addBtn = document.getElementById("add_review");
 let sno = 6;
 console.log(cust_name.value);
+
+function clearForm() {
+  cust_name.value = "";
+  cust_quote.value = "";
+  cust_star.value = "";
+  cust_time.value = "";
+}
 
 function AddReview(e) {
   e.preventDefault();
@@ -58,7 +68,28 @@ function AddReview(e) {
     });
 }
 
-addBtn.addEventListener("click", AddReview);
+// Using firestore
+async function AddReviewToFirestore(e) {
+  e.preventDefault();
+  console.log("clicked");
+  console.log(cust_name.value);
+  try {
+    const docRef = await addDoc(collection(db, "review"), {
+      Name: cust_name.value,
+      Quote: cust_quote.value,
+      Star: cust_star.value,
+      Time: cust_time.value,
+    });
+    console.log("Document written with ID: ", docRef.id);
+    clearForm();
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    alert("Error");
+  }
+
+}
+
+addBtn.addEventListener("click", AddReviewToFirestore);
 
 // @TODO
 // 1. Pricing
