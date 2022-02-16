@@ -1,0 +1,51 @@
+//card in section 2
+
+<div class="card">
+        <div class="icon">
+          <i class="fad fa-tshirt"></i>
+        </div>
+        <h1 class="title">A great fit, that gets better</h1>
+        <p>Feel out of shape and out of sorts in your clothes? It’s not you, it’s them. A great fit is not just
+          important, it’s everything. That’s why we pull out all the stops to get it right.</p>
+</div>
+
+.card{
+    width: 30%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card .icon{
+    min-height: 70px;
+}
+.card .icon i{
+      font-size: 3.5rem;
+    color: #673ab7;
+  }
+  .card h1.title{
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .card p{
+    text-align: center;
+    width: 90%;
+    font-weight: 300;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: -10px;
+  }
+
+  @media(max-width: 500px){
+      .card{
+        width: 90%;
+        height: 300px;
+        gap: 20px;
+      }
+      .card p{
+        font-weight: 300;
+        font-size: 0.8rem;
+      }
+}
