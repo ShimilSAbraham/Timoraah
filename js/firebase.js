@@ -16,16 +16,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-import {
-  getDatabase,
-  ref,
-  set,
-  child,
-  get,
-  update,
-  remove,
-} from "https://www.gstatic.com/firebasejs/9.6.5/firebase-database.js";
-
 import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
 
 // const db = getDatabase();
@@ -39,7 +29,6 @@ let cust_time = document.getElementById("cust_time");
 let cust_star = document.getElementById("cust_star");
 
 let addBtn = document.getElementById("add_review");
-let sno = 6;
 console.log(cust_name.value);
 
 function clearForm() {
@@ -47,25 +36,6 @@ function clearForm() {
   cust_quote.value = "";
   cust_star.value = "";
   cust_time.value = "";
-}
-
-function AddReview(e) {
-  e.preventDefault();
-  console.log(e);
-  alert("Clicked");
-  console.log(cust_name.value);
-  set(ref(db, "Review/" + sno), {
-    Name: cust_name.value,
-    Quote: cust_quote.value,
-    Star: cust_star.value,
-    Time: cust_time.value,
-  })
-    .then(() => {
-      console.log("Data stored successfully");
-    })
-    .catch((error) => {
-      console.error("Unexpected = " + error);
-    });
 }
 
 // Using firestore
